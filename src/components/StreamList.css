@@ -1,0 +1,12 @@
+/* src/components/StreamList.css */
+.streamlist-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .streamlist-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
