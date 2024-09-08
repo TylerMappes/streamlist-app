@@ -1,25 +1,27 @@
-// src/components/StreamList.js
+
 import React, { useState } from 'react';
 import './StreamList.css';
 
 const StreamList = () => {
-  const [input, setInput] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const handleInputChange = (event) => {
-    setInput(event.target.value);
-    console.log(event.target.value);
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   return (
     <div className="streamlist-container">
       <h2>StreamList Page</h2>
-      <input
-        type="text"
-        placeholder="Enter text"
-        value={input}
-        onChange={handleInputChange}
-        className="streamlist-input"
-      />
+      <div className="search-container">
+        <i className="fas fa-search search-icon"></i>
+        <input
+          type="text"
+          placeholder="Search for content..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="search-bar"
+        />
+      </div>
     </div>
   );
 };
