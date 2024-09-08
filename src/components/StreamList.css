@@ -1,12 +1,27 @@
-/* src/components/StreamList.css */
+
 .streamlist-container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .streamlist-input {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
+  text-align: center;
+  margin-top: 50px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.search-bar {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-icon {
+  margin-right: 10px;
+  color: #333;
+  font-size: 20px;
+}
