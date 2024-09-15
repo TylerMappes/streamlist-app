@@ -1,27 +1,26 @@
-
 .streamlist-container {
-  text-align: center;
-  margin-top: 50px;
+  text-align: center; /* Center the content inside the container */
+  margin-top: 50px; /* Add space above the content */
 }
 
 .search-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+  display: flex; /* Arrange search icon and input in a row */
+  justify-content: center; /* Center the entire search section */
+  align-items: center; /* Vertically center the icon and input */
+  margin-top: 20px; /* Space above the search section */
 }
 
 .search-bar {
-  width: 300px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
+  width: 300px; /* Width of the search input */
+  padding: 10px; /* Add padding inside the search input */
+  font-size: 16px; /* Adjust font size */
+  border: 1px solid #ccc; /* Border around input */
+  border-radius: 4px; /* Rounded corners */
+  outline: none; /* Remove default focus outline */
 }
 
 .search-icon {
-  margin-right: 10px;
-  color: #333;
-  font-size: 20px;
+  margin-right: 10px; /* Space between search icon and input */
+  color: #333; /* Color of the search icon */
+  font-size: 20px; /* Adjust icon size */
 }
