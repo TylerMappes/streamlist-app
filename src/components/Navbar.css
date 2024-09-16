@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between; /* Space out navbar items */
   align-items: center;
-  background-color: #333; /* Dark background color */
+  background-color: blue; /* Dark background color */
   padding: 10px 20px; /* Add padding around navbar */
 }
 
