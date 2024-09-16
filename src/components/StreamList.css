@@ -1,26 +1,97 @@
 .streamlist-container {
   text-align: center; /* Center the content inside the container */
+  padding: 20px; /* Consistent padding as in events */
   margin-top: 50px; /* Add space above the content */
 }
 
-.search-container {
-  display: flex; /* Arrange search icon and input in a row */
-  justify-content: center; /* Center the entire search section */
-  align-items: center; /* Vertically center the icon and input */
-  margin-top: 20px; /* Space above the search section */
+.input-container {
+  display: flex; /* Arrange input and button in a row */
+  justify-content: center; /* Center the input and button */
+  align-items: center; /* Vertically center elements */
+  gap: 10px; /* Space between input and button */
+  margin-bottom: 20px; /* Space below the input section */
 }
 
-.search-bar {
-  width: 300px; /* Width of the search input */
-  padding: 10px; /* Add padding inside the search input */
-  font-size: 16px; /* Adjust font size */
-  border: 1px solid #ccc; /* Border around input */
+.movie-input {
+  width: 300px; /* Set width for movie input */
+  padding: 10px; /* Add padding inside the input */
+  border: 1px solid #ccc; /* Border styling similar to Events */
   border-radius: 4px; /* Rounded corners */
-  outline: none; /* Remove default focus outline */
+  font-size: 16px; /* Font size for consistency */
 }
 
-.search-icon {
-  margin-right: 10px; /* Space between search icon and input */
-  color: #333; /* Color of the search icon */
-  font-size: 20px; /* Adjust icon size */
+.submit-button {
+  background-color: blue; /* Set button background */
+  color: white; /* Set button text color */
+  border: none; /* Remove button border */
+  padding: 10px 15px; /* Button padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 4px; /* Rounded button corners */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  margin-left: 10px; /* Add space between input and button */
+}
+
+.submit-button:hover {
+  background-color: darkblue; /* Darker button background on hover */
+}
+
+.movie-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin-top: 20px; /* Space above the list */
+}
+
+.movie-list li {
+  display: flex; /* Arrange movie text and buttons in a row */
+  justify-content: center; /* Center movie items */
+  align-items: center; /* Vertically align items */
+  margin: 10px 0; /* Space between list items */
+}
+
+.movie-list li span {
+  margin-right: 10px; /* Space between text and buttons */
+}
+
+.watched-button,
+.edit-button,
+.delete-button {
+  background-color: blue; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove button border */
+  padding: 5px 10px; /* Smaller padding for list buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth hover transition */
+  margin: 0 5px; /* Horizontal margin between buttons */
+}
+
+.watched-button:hover,
+.edit-button:hover,
+.delete-button:hover {
+  background-color: darkblue; /* Darker background on hover */
+}
+
+.edit-input {
+  padding: 5px; /* Padding inside edit input */
+  border: 1px solid #ccc; /* Border for input */
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 10px; /* Space between input and save button */
+}
+
+.save-button {
+  background-color: green; /* Save button background color */
+  color: white; /* Save button text color */
+  border: none; /* Remove border */
+  padding: 5px 10px; /* Padding for the save button */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.save-button:hover {
+  background-color: darkgreen; /* Darker save button on hover */
+}
+
+.watched {
+  text-decoration: line-through; /* Line-through for watched movies */
 }
