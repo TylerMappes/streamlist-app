@@ -1,0 +1,77 @@
+/* Cart.css */
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a subtle 3D effect */
+  }
+  
+  .cart-container h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #343a40; /* Darker text color */
+    margin-bottom: 20px;
+  }
+  
+  .cart-container p {
+    font-size: 1.2em;
+    text-align: center;
+    color: #6c757d; /* Muted color for the placeholder text */
+  }
+  
+  .cart-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+  }
+  
+  .cart-item h3 {
+    font-size: 1.5em;
+    color: #495057; /* Darker gray for item titles */
+  }
+  
+  .cart-item .cart-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .cart-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cart-actions button:hover {
+    background-color: #0056b3; /* Darken button on hover */
+  }
+  
+  .cart-total {
+    font-size: 1.5em;
+    text-align: right;
+    color: #28a745; /* Green for total price */
+    margin-top: 20px;
+  }
+  
+  .cart-empty {
+    font-size: 1.2em;
+    text-align: center;
+    color: #dc3545; /* Red for empty cart message */
+    margin-top: 40px;
+  }
+  
