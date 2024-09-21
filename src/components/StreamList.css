@@ -1,97 +1,92 @@
+/* Main container for the StreamList section */
 .streamlist-container {
-  text-align: center; /* Center the content inside the container */
-  padding: 20px; /* Consistent padding as in events */
-  margin-top: 50px; /* Add space above the content */
+  margin: 20px; /* Adds space around the container */
+  padding: 20px; /* Adds space inside the container */
+  border: 2px solid #ccc; /* Gives a light grey border */
+  border-radius: 8px; /* Rounds the corners of the container */
+  background-color: #f9f9f9; /* Light background color for the container */
 }
 
-.input-container {
-  display: flex; /* Arrange input and button in a row */
-  justify-content: center; /* Center the input and button */
-  align-items: center; /* Vertically center elements */
-  gap: 10px; /* Space between input and button */
-  margin-bottom: 20px; /* Space below the input section */
+/* Container for the input field and button in StreamList */
+.streamlist-input-container {
+  display: flex; /* Makes the input field and button align horizontally */
+  justify-content: space-between; /* Spreads the input and button across the container */
+  margin-bottom: 20px; /* Adds space below the input container */
 }
 
-.movie-input {
-  width: 300px; /* Set width for movie input */
-  padding: 10px; /* Add padding inside the input */
-  border: 1px solid #ccc; /* Border styling similar to Events */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 16px; /* Font size for consistency */
+/* Styling for the input field inside the input container */
+.streamlist-input-container input {
+  flex: 1; /* Makes the input take up available space in the container */
+  padding: 8px; /* Adds padding inside the input field for better spacing */
+  border: 2px solid #ccc; /* Light grey border for the input field */
+  border-radius: 4px; /* Rounds the corners of the input field */
+  margin-right: 10px; /* Adds space between the input field and the button */
+  font-size: 16px; /* Sets the font size inside the input field */
 }
 
-.submit-button {
-  background-color: blue; /* Set button background */
-  color: white; /* Set button text color */
-  border: none; /* Remove button border */
-  padding: 10px 15px; /* Button padding */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 4px; /* Rounded button corners */
-  transition: background-color 0.3s ease; /* Smooth hover transition */
-  margin-left: 10px; /* Add space between input and button */
+/* Styling for the button inside the input container */
+.streamlist-input-container button {
+  padding: 8px 16px; /* Adds vertical and horizontal padding inside the button */
+  background-color: #007bff; /* Sets the button background color to a blue shade */
+  color: white; /* Makes the button text white */
+  border: none; /* Removes the default button border */
+  border-radius: 4px; /* Rounds the button corners */
+  cursor: pointer; /* Changes the cursor to pointer when hovered */
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
 
-.submit-button:hover {
-  background-color: darkblue; /* Darker button background on hover */
+/* Styling for the button when hovered (darker blue) */
+.streamlist-input-container button:hover {
+  background-color: #0056b3; /* Changes the button color on hover for better interactivity */
 }
 
-.movie-list {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-  margin-top: 20px; /* Space above the list */
+/* Remove default list styling (no bullets) */
+ul {
+  list-style-type: none; /* Removes the default bullet points from the list */
+  padding: 0; /* Removes default padding inside the list */
 }
 
-.movie-list li {
-  display: flex; /* Arrange movie text and buttons in a row */
-  justify-content: center; /* Center movie items */
-  align-items: center; /* Vertically align items */
-  margin: 10px 0; /* Space between list items */
+/* Styling for each list item in the StreamList */
+li {
+  display: flex; /* Aligns the content inside the list item horizontally */
+  justify-content: space-between; /* Spreads the text and buttons apart */
+  padding: 10px; /* Adds padding inside each list item for better spacing */
+  border-bottom: 1px solid #ccc; /* Adds a light grey line between each list item */
 }
 
-.movie-list li span {
-  margin-right: 10px; /* Space between text and buttons */
+/* Styling for the text inside the list items */
+li span {
+  font-size: 18px; /* Increases the font size of the text in the list items */
 }
 
-.watched-button,
-.edit-button,
-.delete-button {
-  background-color: blue; /* Button background color */
-  color: white; /* Button text color */
-  border: none; /* Remove button border */
-  padding: 5px 10px; /* Smaller padding for list buttons */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 4px; /* Rounded corners */
-  transition: background-color 0.3s; /* Smooth hover transition */
-  margin: 0 5px; /* Horizontal margin between buttons */
+/* Styling for each button inside the list items */
+li button {
+  margin-left: 10px; /* Adds space between the buttons */
+  padding: 5px 10px; /* Adds padding inside the button */
+  background-color: #007bff; /* Blue background color for the buttons */
+  color: white; /* Makes the button text white */
+  border: none; /* Removes the button border */
+  border-radius: 4px; /* Rounds the button corners */
+  cursor: pointer; /* Changes the cursor to pointer when hovered */
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
 
-.watched-button:hover,
-.edit-button:hover,
-.delete-button:hover {
-  background-color: darkblue; /* Darker background on hover */
+/* Darker blue background for buttons when hovered */
+li button:hover {
+  background-color: #0071b3; /* Changes the button color on hover for interactivity */
 }
 
-.edit-input {
-  padding: 5px; /* Padding inside edit input */
-  border: 1px solid #ccc; /* Border for input */
-  border-radius: 4px; /* Rounded corners */
-  margin-right: 10px; /* Space between input and save button */
+/* Removes the focus outline around buttons */
+li button:focus {
+  outline: none; /* Removes the default outline when the button is focused */
 }
 
-.save-button {
-  background-color: green; /* Save button background color */
-  color: white; /* Save button text color */
-  border: none; /* Remove border */
-  padding: 5px 10px; /* Padding for the save button */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 4px; /* Rounded corners */
-  transition: background-color 0.3s; /* Smooth hover transition */
+/* Specific styling for the first button inside the list item */
+li button:first-of-type {
+  background-color: #007bff; /* Sets the first button's background color to blue */
 }
 
-.save-button:hover {
-  background-color: darkgreen; /* Darker save button on hover */
-}
-
-.watched {
-  text-decoration: line-through; /* Line-through for watched movies */
+/* Changes the color when the first button is hovered */
+li button:first-of-type:hover {
+  background-color: #0071b3; /* Darker blue when the first button is hovered */
 }
