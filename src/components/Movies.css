@@ -1,0 +1,73 @@
+/* Movies.css */
+.movies-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a subtle 3D effect */
+  }
+  
+  .movies-container h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #343a40; /* Darker text color */
+    margin-bottom: 20px;
+  }
+  
+  .search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: #dc3545; /* Red color for errors */
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .movies-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .movie-item {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+  }
+  
+  .movie-item h3 {
+    font-size: 1.5em;
+    color: #495057; /* Darker gray for item titles */
+  }
+  
+  .movie-item p {
+    font-size: 1em;
+    color: #6c757d; /* Muted color for descriptions */
+  }
+  
