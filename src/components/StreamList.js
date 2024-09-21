@@ -1,117 +1,109 @@
-import React, { useState, useEffect } from 'react'; // Import necessary hooks
-import './StreamList.css'; // Import CSS file for styling
+import React, { useState, useEffect } from 'react'; // Import React, useState, and useEffect hooks for state management and side effects
+import './StreamList.css'; // Import the CSS file for styling the component
 
-// Functional component for the "StreamList" page
+// Main StreamList component
 const StreamList = () => {
-  const [movieTitle, setMovieTitle] = useState(''); // State for movie input
-  const [movieList, setMovieList] = useState([]); // State for storing movies
-  const [editingIndex, setEditingIndex] = useState(null); // State for keeping track of the movie being edited
-  const [editedTitle, setEditedTitle] = useState(''); // State for the edited title
+  // State to hold the movie input, list of movies, and a toggle for edit mode
+  const [input, setInput] = useState(''); // Holds the current value of the movie input field
+  const [movies, setMovies] = useState([]); // Stores the list of added movies
+  const [isEditing, setIsEditing] = useState(false); // Indicates whether we are in edit mode
+  const [currentMovie, setCurrentMovie] = useState(null); // Holds the movie currently being edited
 
-  // Load movies from local storage when the component mounts
+  // This useEffect loads movies from localStorage when the component mounts
   useEffect(() => {
-    const storedMovies = localStorage.getItem('movies');
+    const storedMovies = localStorage.getItem('movies'); // Retrieve 'movies' from localStorage
     if (storedMovies) {
-      setMovieList(JSON.parse(storedMovies)); // Parse and set the stored movies
+      setMovies(JSON.parse(storedMovies)); // If there are saved movies, parse them and set them to state
     }
-  }, []);
+  }, []); // Runs only on component mount
 
-  // Save the movie list to local storage whenever the movie list changes
+  // This useEffect saves the movies to localStorage whenever the movies state changes
   useEffect(() => {
-    localStorage.setItem('movies', JSON.stringify(movieList));
-  }, [movieList]);
+    if (movies.length > 0) {
+      localStorage.setItem('movies', JSON.stringify(movies)); // Save the current movies list to localStorage
+    }
+  }, [movies]); // Runs whenever the `movies` array changes
 
   // Handler for when the user types in the input field
   const handleInputChange = (event) => {
-    setMovieTitle(event.target.value); // Update the input value state
+    setInput(event.target.value); // Update the input state with the current input field value
   };
 
-  // Handler for submitting a new movie to the list
-  const handleAddMovie = () => {
-    if (movieTitle.trim()) { // Ensure the movie title is not empty
-      setMovieList([...movieList, { title: movieTitle, watched: false }]); // Add new movie to the list
-      setMovieTitle(''); // Clear the input field
-    }
+  // Function to add a new movie to the list
+  const addMovie = () => {
+    if (input.trim() === '') return; // Prevent adding if the input is empty
+    const newMovie = { id: Date.now(), title: input, watched: false }; // Create a new movie object with unique ID and watched status
+    setMovies([...movies, newMovie]); // Add the new movie to the existing list
+    setInput(''); // Clear the input field after adding
   };
 
-  // Handler for marking a movie as watched
-  const handleMarkAsWatched = (index) => {
-    const updatedList = [...movieList];
-    updatedList[index].watched = !updatedList[index].watched; // Toggle the "watched" status
-    setMovieList(updatedList); // Update the movie list
+  // Function to delete a movie by its ID
+  const deleteMovie = (id) => {
+    const updatedMovies = movies.filter((movie) => movie.id !== id); // Remove the movie with the matching ID
+    setMovies(updatedMovies); // Update the state with the filtered list
   };
 
-  // Handler for deleting a movie
-  const handleDeleteMovie = (index) => {
-    const updatedList = movieList.filter((_, i) => i !== index); // Remove the movie at the specified index
-    setMovieList(updatedList); // Update the movie list
+  // Function to edit a movie
+  const editMovie = (movie) => {
+    setIsEditing(true); // Set editing mode to true
+    setCurrentMovie(movie); // Set the movie currently being edited
+    setInput(movie.title); // Pre-fill the input field with the movie's title
   };
 
-  // Handler for editing a movie
-  const handleEditMovie = (index) => {
-    setEditingIndex(index); // Set the movie being edited
-    setEditedTitle(movieList[index].title); // Set the current title in the edit field
+  // Function to save the edited movie
+  const saveMovie = () => {
+    setMovies(
+      movies.map((movie) =>
+        movie.id === currentMovie.id ? { ...movie, title: input } : movie
+      )
+    ); // Update the movie title and save it
+    setIsEditing(false); // Exit editing mode
+    setCurrentMovie(null); // Clear the current movie
+    setInput(''); // Clear the input field
   };
 
-  // Handler for saving an edited movie
-  const handleSaveEdit = () => {
-    const updatedList = [...movieList];
-    updatedList[editingIndex].title = editedTitle; // Update the title of the movie being edited
-    setMovieList(updatedList); // Update the movie list
-    setEditingIndex(null); // Exit edit mode
+  // Function to mark a movie as watched/unwatched
+  const toggleWatched = (id) => {
+    setMovies(
+      movies.map((movie) =>
+        movie.id === id ? { ...movie, watched: !movie.watched } : movie
+      )
+    ); // Toggle the watched status of the movie
   };
 
   return (
     <div className="streamlist-container">
-      <h2>StreamList Page</h2> {/* Page Title */}
-      <div className="input-container">
+      <h2>StreamList</h2>
+
+      {/* Input field and button for adding or saving a movie */}
+      <div className="streamlist-input-container">
         <input
           type="text"
-          placeholder="Type a movie title..." // Placeholder text
-          value={movieTitle} // Bind input to movieTitle state
-          onChange={handleInputChange} // Update movieTitle state on input change
-          className="movie-input"
+          placeholder="Enter movie title"
+          value={input} // Bind the input field to the input state
+          onChange={handleInputChange} // Update the input state on change
         />
-        <button onClick={handleAddMovie} className="submit-button">
-          Add Movie
-        </button> {/* Button to submit new movie */}
+        <button onClick={isEditing ? saveMovie : addMovie}>
+          {isEditing ? 'Save' : 'Add'} {/* Show "Save" if editing, otherwise show "Add" */}
+        </button>
       </div>
 
-      <ul className="movie-list">
-        {movieList.map((movie, index) => (
-          <li key={index}>
-            {editingIndex === index ? (
-              <>
-                <input
-                  type="text"
-                  value={editedTitle}
-                  onChange={(e) => setEditedTitle(e.target.value)}
-                  className="edit-input"
-                />
-                <button onClick={handleSaveEdit} className="save-button">
-                  Save
-                </button>
-              </>
-            ) : (
-              <>
-                <span
-                  style={{
-                    textDecoration: movie.watched ? 'line-through' : 'none', // Line-through if watched
-                  }}
-                >
-                  {movie.title}
-                </span>
-                <button onClick={() => handleMarkAsWatched(index)} className="watched-button">
-                  {movie.watched ? 'Unwatch' : 'Watched'}
-                </button>
-                <button onClick={() => handleEditMovie(index)} className="edit-button">
-                  Edit
-                </button>
-                <button onClick={() => handleDeleteMovie(index)} className="delete-button">
-                  Delete
-                </button>
-              </>
-            )}
+      {/* List of movies */}
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie.id}>
+            {/* Movie title and watched status */}
+            <span style={{ textDecoration: movie.watched ? 'line-through' : 'none' }}>
+              {movie.title}
+            </span>
+            {/* Button to toggle the watched status */}
+            <button onClick={() => toggleWatched(movie.id)}>
+              {movie.watched ? 'Unwatch' : 'Watched'}
+            </button>
+            {/* Button to edit the movie */}
+            <button onClick={() => editMovie(movie)}>Edit</button>
+            {/* Button to delete the movie */}
+            <button onClick={() => deleteMovie(movie.id)}>Delete</button>
           </li>
         ))}
       </ul>
@@ -119,4 +111,4 @@ const StreamList = () => {
   );
 };
 
-export default StreamList; // Export component to be used in the app
+export default StreamList;
