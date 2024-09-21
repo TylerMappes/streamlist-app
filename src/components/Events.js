@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; // Import React and useState, useEffect hooks
 import { v4 as uuidv4 } from 'uuid'; // Import UUID library to generate unique IDs for events
 import './Events.css'; // Import the CSS file for styling
 
@@ -69,9 +69,6 @@ const Events = () => {
     
     // Update the state with the filtered events array
     setEvents(updatedEvents);
-    
-    // Save the updated events array to localStorage
-    localStorage.setItem('events', JSON.stringify(updatedEvents));
   };
 
   // Function to start editing an existing event
@@ -115,6 +112,8 @@ const Events = () => {
       <div className="events-input-container">
         <input
           type="text"
+          id="event-input" // Add an id attribute
+          name="event" // Add a name attribute
           placeholder="Enter event"
           value={input} // Bind the input field to the `input` state
           onChange={handleInputChange} // Update the `input` state on change
@@ -122,6 +121,8 @@ const Events = () => {
         />
         <input
           type="date"
+          id="event-date" // Add an id attribute
+          name="event-date" // Add a name attribute
           value={date} // Bind the date input to the `date` state
           onChange={handleDateChange} // Update the `date` state on change
           className="events-date-input"
@@ -155,4 +156,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default Events; // Export the component to be used in the app
