@@ -19,7 +19,7 @@
 }
 
 .events-button {
-  background-color: blue; /* Button background color */
+  background-color: #007bff; /* Button background color */
   color: white; /* Button text color */
   border: none; /* Remove border */
   padding: 10px 15px; /* Add padding to button */
@@ -48,4 +48,5 @@ li {
 
 .event-text {
   margin-right: 10px; /* Add space between event text and buttons */
+  text-decoration: none; /* No line-through by default */
 }
