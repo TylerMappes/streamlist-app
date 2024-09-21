@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation between routes
+import { NavLink } from 'react-router-dom'; // Import NavLink for active link styling
 import './Navbar.css'; // Import the CSS file for styling
 
 // Functional component for the app's Navbar
@@ -9,11 +9,46 @@ const Navbar = () => {
       <h1 className="navbar-logo">StreamList</h1> {/* App Logo */}
       <ul className="nav-links">
         {/* Navigation Links */}
-        <li><Link to="/"><i className="fas fa-home"></i> Home</Link></li>
-        <li><Link to="/movies"><i className="fas fa-film"></i> Movies</Link></li>
-        <li><Link to="/cart"><i className="fas fa-shopping-cart"></i> Cart</Link></li>
-        <li><Link to="/events"><i className="fas fa-calendar-plus"></i> Events</Link></li>
-        <li><Link to="/about"><i className="fas fa-info-circle"></i> About</Link></li>
+        <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? 'active' : '')} // Apply 'active' class if link is active
+          >
+            <i className="fas fa-home"></i> Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/movies"
+            className={({ isActive }) => (isActive ? 'active' : '')} // Apply 'active' class if link is active
+          >
+            <i className="fas fa-film"></i> Movies
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/cart"
+            className={({ isActive }) => (isActive ? 'active' : '')} // Apply 'active' class if link is active
+          >
+            <i className="fas fa-shopping-cart"></i> Cart
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/events"
+            className={({ isActive }) => (isActive ? 'active' : '')} // Apply 'active' class if link is active
+          >
+            <i className="fas fa-calendar-plus"></i> Events
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? 'active' : '')} // Apply 'active' class if link is active
+          >
+            <i className="fas fa-info-circle"></i> About
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
