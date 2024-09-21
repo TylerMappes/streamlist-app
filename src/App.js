@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -16,7 +15,7 @@ function App() {
       <div className="content">
         <Routes>
           <Route path="/" element={<StreamList />} />
-          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies" element={<Movies />} /> {/* Movies page now handles TMDB API */}
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events />} />
