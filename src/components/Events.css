@@ -1,0 +1,55 @@
+.events-container {
+  background-color: white;
+  width: 70%;
+  border-radius: 8px; /* Rounds the corners of the container */
+  text-align: center; /* Center the content of the events container */
+  padding: 20px;
+}
+
+.events-input-container {
+  display: flex;
+  justify-content: center; /* Center the input fields and buttons */
+  align-items: center;
+  gap: 10px; /* Space between input and button */
+  margin-bottom: 20px;
+}
+
+.events-input,
+.events-date-input {
+  padding: 10px; /* Add padding inside input fields */
+  border: 1px solid #ccc; /* Basic border styling */
+  border-radius: 4px; /* Rounded corners for input fields */
+}
+
+.events-button {
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  padding: 10px 15px; /* Add padding to button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 4px; /* Rounded corners for button */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  margin: 0 5px; /* Horizontal margins for spacing between buttons */
+}
+
+.events-button:hover {
+  background-color: darkblue; /* Darker color when hovered */
+}
+
+.completed .event-text {
+  text-decoration: line-through; /* Strike-through for completed events */
+}
+
+ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+li {
+  margin: 10px 0; /* Vertical margin between list items */
+}
+
+.event-text {
+  margin-right: 10px; /* Add space between event text and buttons */
+  text-decoration: none; /* No line-through by default */
+}

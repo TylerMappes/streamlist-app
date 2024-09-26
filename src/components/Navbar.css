@@ -1,34 +1,39 @@
-/* src/components/Navbar.css */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-  }
-  
-  .navbar-logo {
-    color: #fff;
-    font-size: 1.5rem;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin: 0 10px;
-  }
-  
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    background-color: #575757;
-  }
-  
+  display: flex;
+  justify-content: space-between; /* Space out navbar items */
+  align-items: center;
+  background-color: blue; /* Dark background color */
+  padding: 10px 20px; /* Add padding around navbar */
+}
+
+.navbar-logo {
+  color: #fff; /* White text for logo */
+  font-size: 1.5rem; /* Increase font size */
+}
+
+.nav-links {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Arrange links in a row */
+  align-items: center; /* Vertically center links */
+}
+
+.nav-links li {
+  margin: 0 10px; /* Space between each link */
+}
+
+.nav-links a {
+  color: #fff; /* White text color */
+  text-decoration: none; /* Remove underline */
+  padding: 5px 10px; /* Padding inside links */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  display: flex;
+  align-items: center; /* Align icons and text vertically */
+}
+
+.nav-links a i {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.nav-links a:hover {
+  background-color: #0300b3; /* Change background color on hover */
+}

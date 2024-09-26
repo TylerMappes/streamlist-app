@@ -1,0 +1,19 @@
+.about-container {
+    background-color: #333; /* Keeping the original background color */
+    border-radius: 8px; /* Rounds the corners of the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically if needed */
+    text-align: center; /* Center text */
+    margin: 0 auto; /* Ensure the container itself is centered */
+    width: 100%; /* Ensure the container takes up the full width */
+    max-width: 800px; /* Optional: Set a max-width for better formatting */
+    padding: 20px;
+}
+
+.logo {
+    max-width: 100%; /* Make sure the logo is responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space between the logo and the text */
+}
