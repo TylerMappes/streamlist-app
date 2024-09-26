@@ -20,7 +20,7 @@ const About = () => {
       <p>
         Looking ahead, our goal is to expand our reach and bring the joy 
         of EZTech services to 10 million subscribers over the next three years. 
-        Thank you for being a part of our family. We look forward to delivering 
+        Thank you for being a part of our family! We look forward to delivering 
         more entertainment and providing you an amazing viewing experience!
       </p>
     </div>
